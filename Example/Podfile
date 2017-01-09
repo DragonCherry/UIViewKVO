@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'UIViewKVO_Example' do
+  pod 'UIViewKVO', :path => '../'
+
+  target 'UIViewKVO_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
