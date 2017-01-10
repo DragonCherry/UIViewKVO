@@ -15,7 +15,7 @@ public extension UIView {
     /** Set nil on first parameter to remove existing object for key. */
     public func setObject(_ object: Any?, key: String) {
         var dictionary: [String: Any]!
-        if var savedDictionary = self.layer.value(forKey: kUIViewKVODictionaryKey) as? [String: Any] {
+        if let savedDictionary = self.layer.value(forKey: kUIViewKVODictionaryKey) as? [String: Any] {
             dictionary = savedDictionary
         } else {
             dictionary = [String: Any]()
