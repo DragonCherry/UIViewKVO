@@ -13,12 +13,12 @@ private let kUIViewKVODictionaryKey = "kUIViewKVODictionaryKey"
 public extension UIView {
     
     /** Set nil on first parameter to remove existing object for key. */
-    public func setObject(_ object: Any?, key: String) {
-        var dictionary: [String: Any]!
-        if let savedDictionary = self.layer.value(forKey: kUIViewKVODictionaryKey) as? [String: Any] {
+    public func set(_ object: Any?, forKey key: AnyHashable) {
+        var dictionary: [AnyHashable: Any]!
+        if let savedDictionary = self.layer.value(forKey: kUIViewKVODictionaryKey) as? [AnyHashable: Any] {
             dictionary = savedDictionary
         } else {
-            dictionary = [String: Any]()
+            dictionary = [AnyHashable: Any]()
         }
         if let object = object {
             dictionary[key] = object
@@ -28,8 +28,8 @@ public extension UIView {
         self.layer.setValue(dictionary, forKey: kUIViewKVODictionaryKey)
     }
     
-    public func getObject(_ key: String) -> Any? {
-        if let dictionary = self.layer.value(forKey: kUIViewKVODictionaryKey) as? [String: Any] {
+    public func get(_ key: AnyHashable) -> Any? {
+        if let dictionary = self.layer.value(forKey: kUIViewKVODictionaryKey) as? [AnyHashable: Any] {
             return dictionary[key]
         } else {
             return nil
