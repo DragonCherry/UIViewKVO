@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIViewKVO'
-  s.version          = '0.1.3'
-  s.summary          = 'KVO utility methods for extending UIView class.'
+  s.version          = '2.0.0'
+  s.summary          = 'Enables KVO methods by UIView extension.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
